@@ -15,6 +15,76 @@
 */
 
 .page {
+  margin: 100px auto;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: "wght" var(--main-font-weight);
+  background-color: var(--background-color);
+  background-image: var(--background-image);
+  background-size: cover;
+  color: var(--text-color);
 }
+
+@media (width > 375px) {
+
+}
+
+/* -----------------------header------------------------ */
+
+.header--width {
+  width: var(--width-value);
+}
+
+.header {
+  display: grid;
+  place-items: center;
+  gap: 20px;
+  padding-top: 121px;
+  margin-bottom: 100px;
+  outline: 2px solid var(--accent-color);
+  outline-offset: -2px;
+  background-color: var(--background-color);
+  font-family: var(--accent-font), monospace;
+  text-transform: uppercase;
+}
+
+.header__logo {
+  font-size: clamp(3.06rem, 3.06rem, 4.06rem);
+}
+
+.header__title {
+  font-size: clamp(0.87rem, 0.87rem, 1.87rem);
+}
+
+.theme-menu {
+  padding: 5px 0px 27px 20px;
+}
+
+.theme-menu__list {
+  display: grid;
+  gap: 10px;
+}
+
+.theme-menu__button {
+  background-color: transparent;
+  border: none;
+  position: relative;
+  font-size: clamp(0.89rem, 0.89rem, 1.89rem);
+  text-transform: uppercase;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  top: 0;
+  left: -13px;
+}
+
+/* -----------------------content------------------------ */
+
+.content {
+  display: grid;
+  gap: 20px;
+}
+
