@@ -13,6 +13,8 @@
         linear-gradient(to bottom, #007f0c 0.01%, #004306);
     --text-color: #00CC14;
     --accent-color: #00CC14;
+    --color-lable-text: #00CC14;
+    --color-lable-shadow: #000000;
 }
 
 :root.theme-light {
@@ -23,6 +25,8 @@
         linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
     --text-color: #000000;
     --accent-color: #000000;
+    --color-lable-text: #000000;
+    --color-lable-shadow: #FFFFFF;
 }
 
 @media (prefers-color-scheme: light) { 
@@ -34,6 +38,8 @@
             linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
         --text-color: #000000;
         --accent-color: #000000;
+        --color-lable-text: #000000;
+        --color-lable-shadow: #FFFFFF;
     }
 }
     

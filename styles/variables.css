@@ -17,5 +17,8 @@
         linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
 
     --width-value: 100%;
+    
+    --color-lable-text: #000000;
+    --color-lable-shadow: #FFFFFF;
 }
 
