@@ -15,6 +15,8 @@
     --accent-color: #00CC14;
     --color-lable-text: #00CC14;
     --color-lable-shadow: #000000;
+    --color-floppy: #00CC14;
+    --color-floppy-hover: #000000;
 }
 
 :root.theme-light {
@@ -27,6 +29,8 @@
     --accent-color: #000000;
     --color-lable-text: #000000;
     --color-lable-shadow: #FFFFFF;
+    --color-floppy: #000000;
+    --color-floppy-hover: #FFFFFF;
 }
 
 @media (prefers-color-scheme: light) { 
@@ -40,6 +44,8 @@
         --accent-color: #000000;
         --color-lable-text: #000000;
         --color-lable-shadow: #FFFFFF;
+        --color-floppy: #000000;
+        --color-floppy-hover: #FFFFFF;
     }
 }
     

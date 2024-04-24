@@ -198,13 +198,16 @@
   background-color: transparent;
 }
 
+.content__card-rating__button {
+  font-size: 0.87em;
+  line-height: 0.8;
+  padding: 12px 35px 9px 35px;
+}
+
 .button {
   position: relative;
   font-family: var(--accent-font), monospace;
   font-variation-settings: "wght" var(--main-font-weight);
-  font-size: 0.87em;
-  line-height: 0.8;
-  padding: 12px 35px 9px 35px;
   background-color: transparent;
   border: 2px solid var(--accent-color);
   transition: 0.5s;
@@ -224,7 +227,7 @@
   position: absolute;
   inset: 0;
   background-color: var(--accent-color, #000000);
-  transition: color 0.5s ease-out, inline-size 0.5s ease-out;
+  transition: color 0.5s ease-out, inline-size 0.5s ease-out, fill 0.5s ease-out;
   block-size: 100%;
   inline-size: 0;
 }
@@ -234,7 +237,12 @@
 }
 
 .button:hover .button__text {
-  color: #FFFFFF;
+  color: var(--color-floppy-hover);
+  mix-blend-mode: difference;
+}
+
+.button:hover .floppy-icon {
+  fill: var(--color-floppy-hover);
   mix-blend-mode: difference;
 }
 
@@ -257,14 +265,13 @@
 }
 
 .footer__button__text {
-  font-family: var(--accent-font), monospace;
-  font-variation-settings: "wght" var(--main-font-weight);
   font-size: 0.87em;
   line-height: 12.6px; /* Исправить */
 }
 
 .floppy-icon {
-  inline-size: 28px;
+  inline-size: 28px; /* Исправить */
+  fill: var(--color-floppy);
 }
 
 /* -----------------------dialog------------------------ */
@@ -297,19 +304,14 @@
 .dialog__button {
   inline-size: 100%;
   padding: 5px;
-  background-color: var(--background-color);
-  outline: 2px solid var(--accent-color);
-  outline-offset: -2px;
 }
 
 .dialog__button-text {
-  font-family: var(--accent-font), monospace;
-  font-variation-settings: "wght" var(--main-font-weight);
   font-size: 0.87em;
   line-height: 12.6px; /* Исправить */
-  text-transform: uppercase;
 }
 
 .dialog__floppy-icon {
   inline-size: 100px;
+  fill: var(--color-floppy);
 }
