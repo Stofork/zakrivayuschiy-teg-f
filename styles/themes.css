@@ -16,7 +16,9 @@
     --color-lable-text: #00CC14;
     --color-lable-shadow: #000000;
     --color-floppy: #00CC14;
-    --color-floppy-hover: #000000;
+    --color-hover: #00CC14;
+    --color-heart: #FF0000;
+    --color-hover-heart: #00CC14;
 }
 
 :root.theme-light {
@@ -30,7 +32,9 @@
     --color-lable-text: #000000;
     --color-lable-shadow: #FFFFFF;
     --color-floppy: #000000;
-    --color-floppy-hover: #FFFFFF;
+    --color-hover: #FFFFFF;
+    --color-heart: #FF0000;
+    --color-hover-heart: #000000;
 }
 
 @media (prefers-color-scheme: light) { 
@@ -45,7 +49,9 @@
         --color-lable-text: #000000;
         --color-lable-shadow: #FFFFFF;
         --color-floppy: #000000;
-        --color-floppy-hover: #FFFFFF;
+        --color-hover: #FFFFFF;
+        --color-heart: #FF0000;
+        --color-hover-heart: #000000;
     }
 }
     

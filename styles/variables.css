@@ -22,6 +22,9 @@
     --color-lable-shadow: #FFFFFF;
 
     --color-floppy: #000000;
-    --color-floppy-hover: #FFFFFF;
+    --color-hover: #FFFFFF;
+
+    --color-heart: #FF0000;
+    --color-hover-heart: #000000;
 }
 

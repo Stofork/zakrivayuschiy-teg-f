@@ -190,18 +190,90 @@
 .content__card-rating {
   display: flex;
   justify-content: flex-end;
+  gap: 7px;
   margin: 25px 27px 27px 25px;
 }
 
-.content__card-rating__heart {
+.card__icon-button {
+  padding: 0;
   border: none;
-  background-color: transparent;
+  background: transparent;
+  width: 39px;
+  height: 36px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.content__card-rating__button {
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  /* outline-offset: -1px; */
+}
+
+.card__like-button {
+  min-width: 130px;
+  min-height: 38px;
   font-size: 0.87em;
   line-height: 0.8;
-  padding: 12px 35px 9px 35px;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--color-hover-heart);
+  transition: fill 0.3s- 0.05s;
+}
+
+.like-icon:hover .core {
+  fill: var(--color-hover-heart);
+  transition: fill 0.3s 0.03s;
+}
+
+.like-icon:active .core {
+  fill: var(--color-heart);
+  transition: fill 0.3s 0.03s;
+}
+
+.like-icon:active .main-body {
+  fill: var(--color-heart);
+  transition: fill 0.3s 0.05s;
+}
+
+.like-icon.is-liked {
+  .core {
+    fill: var(--color-heart);
+    transition: fill 0.3s 0.03s;
+  }
+  .main-body {
+    fill: var(--color-heart);
+    transition: fill 0.3s 0.05s;
+  }
+  .contour {
+    fill: var(--color-heart);
+    transition: fill 0.3s 0.06s;
+  }
+  .heart {
+    transform-origin: center;
+    animation: bigheart 0.3s 0.1s ease-in;
+  }
+  .sparks {
+    transform-origin: center;
+    animation: heartsparks 0.3s 0.3s ease-in;
+  }
+}
+
+.like-icon .sparks {
+  opacity: 0;
+  fill: var(--color-heart);
+}
+
+.like-icon.is-liked .heart {
+  animation: heart__scale-animation 0.3s ease-in 0.1s 1 alternate;
+}
+
+.like-icon.is-liked .sparks {
+  animation: heart__sparks-animation 0.3s ease-in 0.3s 1 alternate;
 }
 
 .button {
@@ -210,7 +282,7 @@
   font-variation-settings: "wght" var(--main-font-weight);
   background-color: transparent;
   border: 2px solid var(--accent-color);
-  transition: 0.5s;
+  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -226,8 +298,8 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var(--accent-color, #000000);
-  transition: color 0.5s ease-out, inline-size 0.5s ease-out, fill 0.5s ease-out;
+  background-color: var(--accent-color);
+  transition: inline-size 0.5s ease-out;
   block-size: 100%;
   inline-size: 0;
 }
@@ -237,12 +309,22 @@
 }
 
 .button:hover .button__text {
-  color: var(--color-floppy-hover);
+  color: var(--color-hover);
+  mix-blend-mode: difference;
+}
+
+.button:not(:hover) .button__text {
+  color: var(--color-hover);
   mix-blend-mode: difference;
 }
 
 .button:hover .floppy-icon {
-  fill: var(--color-floppy-hover);
+  fill: var(--color-hover);
+  mix-blend-mode: difference;
+}
+
+.button:not(:hover) .floppy-icon {
+  fill: var(--color-hover);
   mix-blend-mode: difference;
 }
 
@@ -250,6 +332,7 @@
 
 .footer {
   margin: 51px 32px;
+  background-color: var(--background-color);
 }
 
 .footer__button {
@@ -259,29 +342,30 @@
   align-items: center;
   gap: 10px;
   padding: 14px 10px;
-  background-color: var(--background-color);
-  outline: 2px solid var(--accent-color);
-  outline-offset: -2px;
 }
 
 .footer__button__text {
   font-size: 0.87em;
-  line-height: 12.6px; /* Исправить */
+  line-height: 12.6px;
 }
 
-.floppy-icon {
-  inline-size: 28px; /* Исправить */
+.footer__floppy-icon {
+  inline-size: 28px;
   fill: var(--color-floppy);
 }
 
 /* -----------------------dialog------------------------ */
 
-.dialog {
-  padding: 36px 32px;
+dialog[open] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
   background-color: var(--background-color);
   outline: 2px solid var(--accent-color);
   outline-offset: -2px;
-  color: var(--text-color);
 }
 
 .dialog::backdrop {
@@ -290,28 +374,44 @@
 
 .dialog-conteiner {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
-  margin-block-end: 20px;
 }
 
 .dialog__text {
-  font-family: var(--accent-font), monospace;
-  font-variation-settings: "wght" var(--main-font-weight);
-  font-size: 0.87em;
-  line-height: 21px; /* Исправить */
+  width: clamp(12.375rem, 11.583rem + 3.38vw, 14.625rem);
+  color: var(--accent-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
 }
 
 .dialog__button {
-  inline-size: 100%;
-  padding: 5px;
+  width: clamp(16.063rem, 15.27rem + 3.38vw, 18.313rem);
+  border: 2px solid var(--accent-color);
+  padding: 7px 0;
+  outline: none;
+  background-color: transparent;
 }
 
 .dialog__button-text {
-  font-size: 0.87em;
-  line-height: 12.6px; /* Исправить */
+  color: var(--accent-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 12.6px;
+  text-transform: uppercase;
 }
 
 .dialog__floppy-icon {
-  inline-size: 100px;
   fill: var(--color-floppy);
 }
+
+
+/* Filt */
+
+.filter {
+  filter: sepia(0.5);
+}
+

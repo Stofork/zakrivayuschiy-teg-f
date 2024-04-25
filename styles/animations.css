@@ -25,3 +25,22 @@
     }
 }
 
+@keyframes heart__scale-animation {
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 1.5;
+  }
+}
+
+@keyframes heart__sparks-animation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
