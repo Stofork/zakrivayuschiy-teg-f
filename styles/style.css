@@ -141,7 +141,6 @@
   padding: 7px 5px 3px 12px;
   font-variation-settings: "wght" var(--main-font-weight-title);
   font-size: clamp(1.125rem, 0.2rem + 1vw, 2.125rem);
-  /* font-size: 1.125em; */
   line-height: 1.2;
 }
 
@@ -340,7 +339,6 @@
   align-items: center;
   justify-content: center;
   margin: 51px 32px;
-  
 }
 
 .footer__button {
