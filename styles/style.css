@@ -138,7 +138,7 @@
 }
 
 .content__card-title {
-  padding: 6px 5px 3px 12px;
+  padding: 7px 5px 3px 12px;
   font-variation-settings: "wght" var(--main-font-weight-title);
   font-size: 1.125em;
   line-height: 1.2;
@@ -170,10 +170,17 @@
   color: var(--color-lable-text);
 }
 
+@supports((text-stroke: 1px var(--color-lable-shadow)) or (-webkit-text-stroke: 1px var(--color-lable-shadow))) {
+  .content__card-lable {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--color-lable-shadow);
+  }
+}
+
 .content__card-text {
   display: grid;
   gap: 27px;
-  margin: 25.5px 27px;
+  margin: 24px 27px 24px 27px;
   font-size: 1.125em;
   line-height: 1.169em;
 }
@@ -182,16 +189,18 @@
 .content__card-rating {
   display: flex;
   justify-content: flex-end;
-  gap: 7px;
-  margin: 25px 27px 27px 25px;
+  gap: 6px;
+  margin: 25px 27px 24px 27px;
 }
 
 .card__icon-button {
   padding: 0;
+  margin-top: 2px;
+  margin-bottom: 2px;
   border: none;
   background: transparent;
-  width: 39px;
-  height: 36px;
+  inline-size: 39px;
+  block-size: 37px;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -202,28 +211,28 @@
 
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
+
 }
 
 .card__like-button {
-  min-width: 130px;
-  min-height: 38px;
+  min-inline-size: 130px;
   font-size: 0.87em;
-  line-height: 0.8;
+  line-height: 0.85;
 }
 
 .like-icon:hover .main-body {
   fill: var(--color-hover-heart);
-  transition: fill 0.3s- 0.05s;
+  transition: fill 0.3s 0.05s;
 }
 
 .like-icon:hover .core {
   fill: var(--color-hover-heart);
-  transition: fill 0.3s 0.03s;
+  transition: fill 0.3s 0.05s;
 }
 
 .like-icon:active .core {
   fill: var(--color-heart);
-  transition: fill 0.3s 0.03s;
+  transition: fill 0.3s 0.05s;
 }
 
 .like-icon:active .main-body {
@@ -231,7 +240,7 @@
   transition: fill 0.3s 0.05s;
 }
 
-/* ----------------------- Liked ----------------------- */
+/* ----------------------- Is liked ----------------------- */
 
 .like-icon.is-liked .core {
   fill: var(--color-heart);
@@ -341,7 +350,7 @@
   justify-content: center;
   background-color: var(--background-color);
   gap: 10px;
-  padding: 12px 10px;
+  padding: 14px 10px;
 }
 
 @media (width > 375px) {
