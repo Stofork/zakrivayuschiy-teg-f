@@ -140,7 +140,8 @@
 .content__card-title {
   padding: 7px 5px 3px 12px;
   font-variation-settings: "wght" var(--main-font-weight-title);
-  font-size: 1.125em;
+  font-size: clamp(1.125rem, 0.2rem + 1vw, 2.125rem);
+  /* font-size: 1.125em; */
   line-height: 1.2;
 }
 
@@ -181,7 +182,7 @@
   display: grid;
   gap: 27px;
   margin: 24px 27px 24px 27px;
-  font-size: 1.125em;
+  font-size: clamp(1.125rem, 0.2rem + 1vw, 2.125rem);
   line-height: 1.169em;
 }
 
