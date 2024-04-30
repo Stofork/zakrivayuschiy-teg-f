@@ -14,6 +14,8 @@
 
 */
 
+* { outline: 1px solid black}
+
 .page {
   margin: 100px auto;
   min-inline-size: 320px;
@@ -61,7 +63,7 @@
 }
 
 .header__logo {
-  font-size: clamp(3.064rem, 2.2rem + 3.3vw, 4.064rem);
+  font-size: clamp(3.064rem, 2.064rem + 2.5vw, 4.064rem);
 }
 
 
@@ -70,15 +72,16 @@
 }
 
 .theme-menu {
-  padding: 4px 0px 27px 20px;
+  padding: 4px 0px 26px 20px;
 }
 
 .theme-menu__list {
   display: grid;
-  gap: 10px;
+  gap: 12px;
 }
 
 .theme-menu__button {
+  padding: 0;
   background-color: transparent;
   border: none;
   position: relative;
@@ -92,8 +95,8 @@
   content: "▶";
   position: absolute;
   inset-block-start: 0;
-  inset-inline-start: -13px;
-  animation: arrow 0.5 alternate ease-in-out;
+  inset-inline-start: -18px;
+  animation: arrow 0.5s alternate ease-in-out;
 }
 
 .theme-menu__button::after {
@@ -102,7 +105,7 @@
   border-block-end: 2px solid currentColor;
   inline-size: 100%;
   inset-inline-start: 0;
-  inset-block-end: 0;
+  inset-block-end: -2px;
   transition: transform 0.3s ease;
   transform: scaleX(0);
   transform-origin: left;
@@ -130,28 +133,30 @@
 /* ----------------------- Content ------------------------ */
 
 .content {
+  position: relative;
+}
+
+.content-item {
   display: grid;
   gap: 50px;
-  position: relative;
 }
 
 .content__card {
   background-color: var(--background-color);
-  outline: 2px solid var(--accent-color);
-  outline-offset: -2px;
+  border: 2px solid var(--accent-color);
 }
 
 .content__card-title {
-  padding: 7px 5px 3px 12px;
+  margin: 5px 5px 3px 10px;
   font-variation-settings: "wght" var(--main-font-weight-title);
-  font-size: clamp(1.125rem, 0.2rem + 1vw, 2.125rem);
+  font-size: 1.123rem;
   line-height: 1.2;
 }
 
 .content__card-img {
   position: relative;
-  outline: 2px solid var(--accent-color);
-  outline-offset: -2px;
+  border-block-start: 2px solid var(--accent-color);
+  border-block-end: 2px solid var(--accent-color);
 }
 
 .card_image {
@@ -159,7 +164,7 @@
   inline-size: 100%;
   object-fit: cover;
   object-position: center;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1 / 1.005;
 }
 
 .content__card-lable {
@@ -186,8 +191,8 @@
 .content__card-text {
   display: grid;
   gap: 27px;
-  margin: 24px 27px 24px 27px;
-  font-size: clamp(1.125rem, 0.2rem + 1vw, 2.125rem);
+  margin: 24px 25px;
+  font-size: 1.125rem;
   line-height: 1.169em;
 }
 
@@ -196,7 +201,7 @@
   display: flex;
   justify-content: flex-end;
   gap: 6px;
-  margin: 25px 27px 24px 27px;
+  margin: 25px;
 }
 
 .card__icon-button {
@@ -206,7 +211,7 @@
   border: none;
   background: transparent;
   inline-size: 39px;
-  block-size: 37px;
+  block-size: 34px;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -217,13 +222,12 @@
 
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
-
 }
 
 .card__like-button {
   min-inline-size: 130px;
-  font-size: 0.87em;
-  line-height: 0.85;
+  font-size: 0.91em;
+  line-height: 0.9;
   animation-timing-function: linear;
 }
 
@@ -364,13 +368,20 @@
   justify-content: center;
   background-color: var(--background-color);
   gap: 10px;
-  padding: 14px 10px;
+  padding: 15px 10px;
 }
 
 @media (width > 375px) {
   .save__button { 
     inline-size: 54%;
     flex-direction: row;
+    padding: 12px;
+    gap: 6px;
+  }
+
+  .save__floppy-icon {
+    inline-size: 16px;
+    height: 20px;
   }
 }
 

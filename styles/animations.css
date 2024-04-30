@@ -15,13 +15,13 @@
 
 @keyframes arrow {
     0% {
-      left: -13px;
+      left: -18px;
     }
     50% {
-      left: -17px;
+      left: -22px;
     }
     100% {
-      left: -13px;
+      left: -18px;
     }
 }
 
