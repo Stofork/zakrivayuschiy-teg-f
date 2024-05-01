@@ -14,8 +14,6 @@
 
 */
 
-* { outline: 1px solid black}
-
 .page {
   margin: 100px auto;
   min-inline-size: 375px;
@@ -63,7 +61,7 @@
 }
 
 .header__logo {
-  font-size: clamp(3.064rem, 4.51vw, 4.064rem);
+  font-size: clamp(3.064rem, 4.52vw, 5.064rem);
 }
 
 
@@ -149,8 +147,15 @@
 .content__card-title {
   margin: 5px 5px 3px 10px;
   font-variation-settings: "wght" var(--main-font-weight-title);
-  font-size: clamp(1.123rem, 1.21vw, 2.123rem);
+  /* font-size: clamp(1.125rem, 1.21vw, 2.125rem); */
+  font-size: 1.125rem;
   line-height: 1.2;
+}
+
+@media (width > 375px) {
+  .content__card-title { 
+    font-size: 1.124rem;
+  }
 }
 
 .content__card-img {
@@ -191,17 +196,23 @@
 .content__card-text {
   display: grid;
   gap: 27px;
-  margin: 24px 26px;
-  font-size: clamp(1.121rem, 1.21vw, 2.123rem);
-  line-height: 1.169em;
+  margin: 24px 25px;
+  font-size: 1.125rem;
+  line-height: 1.17;
 }
 
+@media (width > 375px) {
+  .content__card-text { 
+    font-size: 1.127rem;
+    margin: 24px 24px 25px 24px
+  }
+}
 
 .content__card-rating {
   display: flex;
   justify-content: flex-end;
   gap: 6px;
-  margin: 25px;
+  margin: 25px 25px 24px 25px;
 }
 
 .card__icon-button {
@@ -226,7 +237,7 @@
 
 .card__like-button {
   min-inline-size: 130px;
-  font-size: 0.91em;
+  font-size: 0.91rem;
   line-height: 0.9;
   animation-timing-function: linear;
 }
@@ -311,6 +322,7 @@
 
 .floppy-icon {
   mix-blend-mode: difference;
+  fill: var(--color-floppy);
 }
 
 .button:focus {
@@ -357,7 +369,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 51px 32px;
+  margin: 50px 32px;
 }
 
 .save__button {
@@ -375,14 +387,7 @@
   .save__button { 
     inline-size: 54%;
     flex-direction: row;
-    padding: 14px;
-    gap: 6px;
-  }
-
-  .save__floppy-icon {
-    /* inline-size: clamp(28px, 28px, 28px); */
-    inline-size: 16px;
-    height: 20px;
+    gap: 5px;
   }
 }
 
@@ -396,9 +401,15 @@
   fill: var(--color-floppy);
 }
 
+@media (width > 375px) { 
+  .save__floppy-icon {
+    inline-size: clamp(22px, 1vw, 28px);
+  }
+}
+
 /* ----------------------- Dialog ------------------------ */
 
-dialog[open] {
+dialog[open]{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -417,24 +428,25 @@ dialog[open] {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 32px;
 }
 
 .dialog__text {
   color: var(--accent-color);
   font-family: var(--accent-font, fantasy);
-  inline-size: clamp(12.375rem, 11.583rem + 3.38vw, 14.625rem);
+  inline-size: 13.375rem;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 150%;
   text-transform: uppercase;
 }
 
 .dialog__button {
   border: 2px solid var(--accent-color);
-  padding: 7px 0;
+  padding: 8px;
   outline: none;
   background-color: transparent;
-  inline-size: clamp(16.063rem, 15.27rem + 3.38vw, 18.313rem);
+  inline-size: 12.5rem;
+  width: 260px;
 }
 
 .dialog__button__text {
@@ -444,7 +456,8 @@ dialog[open] {
 }
 
 .dialog__floppy-icon {
-  fill: var(--color-floppy);
+  width: 39px;
+  height: 39px;
 }
 
 
