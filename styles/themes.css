@@ -19,6 +19,8 @@
     --color-hover: #00CC14;
     --color-heart: #FF0000;
     --color-hover-heart: #00CC14;
+    --main-font-weight-title: 785;
+    --main-font-weight: 465;
 }
 
 :root.theme-light {
