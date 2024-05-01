@@ -18,7 +18,7 @@
 
 .page {
   margin: 100px auto;
-  min-inline-size: 320px;
+  min-inline-size: 375px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
   font-variation-settings: "wght" var(--main-font-weight);
@@ -63,12 +63,12 @@
 }
 
 .header__logo {
-  font-size: clamp(3.064rem, 2.064rem + 2.5vw, 4.064rem);
+  font-size: clamp(3.064rem, 4.51vw, 4.064rem);
 }
 
 
 .header__title {
-  font-size: clamp(0.87rem, 0.45rem + 1.1vw, 1.87rem);
+  font-size: clamp(0.87rem, 1.6vw, 1.87rem);
 }
 
 .theme-menu {
@@ -85,7 +85,7 @@
   background-color: transparent;
   border: none;
   position: relative;
-  font-size: clamp(0.87rem, 0.87rem, 1.87rem);
+  font-size: clamp(0.87rem, 1vw, 1.87rem);
   text-transform: uppercase;
   cursor: pointer;
   transition: opacity 0.3s ease;
@@ -149,7 +149,7 @@
 .content__card-title {
   margin: 5px 5px 3px 10px;
   font-variation-settings: "wght" var(--main-font-weight-title);
-  font-size: 1.123rem;
+  font-size: clamp(1.123rem, 1.21vw, 2.123rem);
   line-height: 1.2;
 }
 
@@ -191,8 +191,8 @@
 .content__card-text {
   display: grid;
   gap: 27px;
-  margin: 24px 25px;
-  font-size: 1.125rem;
+  margin: 24px 26px;
+  font-size: clamp(1.121rem, 1.21vw, 2.123rem);
   line-height: 1.169em;
 }
 
@@ -361,7 +361,7 @@
 }
 
 .save__button {
-  display: flex;  
+  display: flex; 
   inline-size: 100%;
   flex-direction: column;
   align-items: center;
@@ -375,18 +375,19 @@
   .save__button { 
     inline-size: 54%;
     flex-direction: row;
-    padding: 12px;
+    padding: 14px;
     gap: 6px;
   }
 
   .save__floppy-icon {
+    /* inline-size: clamp(28px, 28px, 28px); */
     inline-size: 16px;
     height: 20px;
   }
 }
 
 .save__button__text {
-  font-size: 0.87em;
+  font-size: clamp(0.87rem, 1vw, 1.87rem);
   line-height: 12.6px;
 }
 
