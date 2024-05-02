@@ -18,7 +18,7 @@
   margin: 100px auto;
   min-inline-size: 375px;
   min-block-size: 100dvb;
-  font-family: var(--main-font), sans-serif;
+  font-family: var(--main-font, sans-serif);
   font-variation-settings: "wght" var(--main-font-weight);
   background-color: var(--background-color);
   background-image: var(--background-image);
@@ -50,7 +50,7 @@
   outline: 2px solid var(--accent-color);
   outline-offset: -2px;
   background-color: var(--background-color);
-  font-family: var(--accent-font), fantasy;
+  font-family: var(--accent-font, fantasy);
   text-transform: uppercase;
 }
 
@@ -94,7 +94,7 @@
   position: absolute;
   inset-block-start: 0;
   inset-inline-start: -18px;
-  animation: arrow 0.5s alternate ease-in-out;
+  animation: arrow 0.5s infinite alternate ease-in-out;
 }
 
 .theme-menu__button::after {
@@ -147,7 +147,6 @@
 .content__card-title {
   margin: 5px 5px 3px 10px;
   font-variation-settings: "wght" var(--main-font-weight-title);
-  /* font-size: clamp(1.125rem, 1.21vw, 2.125rem); */
   font-size: 1.125rem;
   line-height: 1.2;
 }
@@ -178,7 +177,7 @@
   inset-inline-end: 3.6%;
   text-shadow: -1px 0 var(--color-lable-shadow), 0 1px var(--color-lable-shadow),
     1px 0 var(--color-lable-shadow), 0 -1px var(--color-lable-shadow);
-  font-family: var(--accent-font), fantasy;
+  font-family: var(--accent-font, fantasy);
   font-size: 0.87em;
   line-height: 0.8;
   mix-blend-mode: hard-light;
@@ -239,25 +238,27 @@
   min-inline-size: 130px;
   font-size: 0.91rem;
   line-height: 0.9;
-  animation-timing-function: linear;
+  /* transition:  0.5s ease; */
 }
 
 .like-icon .core {
-  transition: fill 0.3s linear;
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
 }
 
 .like-icon:hover .core {
   fill: var(--color-hover-heart);
-  transition: fill 0.3s 0.05s linear;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:active .core {
   fill: var(--color-heart);
-  transition: fill 0.3s 0.05s linear;
+  transition: fill 0.3s linear;
 }
 
 .like-icon .main-body {
   transition: fill 0.3s linear;
+  fill: transparent;
 }
 
 .like-icon:hover .main-body {
@@ -271,7 +272,7 @@
 }
 
 .like-icon .contour {
-  transition: fill 0.3s linear;
+  transition: fill 0.1s linear;
 }
 
 /* ----------------------- Is liked ----------------------- */
@@ -283,7 +284,7 @@
 
 .like-icon.is-liked .main-body {
   fill: var(--color-heart);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s;
 }
 
 .like-icon.is-liked .contour {
@@ -308,12 +309,12 @@
 
 .button {
   position: relative;
-  font-family: var(--accent-font), fantasy;
-  font-variation-settings: "wght" var(--main-font-weight);
+  font-family: var(--accent-font, fantasy);
   background-color: transparent;
   border: 2px solid var(--accent-color);
   transition: 0.3s;
   cursor: pointer;
+  color: var(--color-hover);
 }
 
 .button__text {
@@ -321,8 +322,8 @@
 }
 
 .floppy-icon {
-  mix-blend-mode: difference;
-  fill: var(--color-floppy);
+    fill: var(--color-floppy);
+  /* fill: var(--color-floppy); */
 }
 
 .button:focus {
@@ -348,19 +349,11 @@
 }
 
 .button:hover .button__text {
-  color: var(--color-hover);
+  mix-blend-mode: difference;
 }
 
-.button:not(:hover) .button__text {
-  color: var(--color-hover);
-}
-
-.button:hover .floppy-icon {
-  fill: var(--color-hover);
-}
-
-.button:not(:hover) .floppy-icon {
-  fill: var(--color-hover);
+.button:hover .save__floppy-icon {
+  mix-blend-mode: difference;
 }
 
 /* ----------------------- Save button ------------------------ */
@@ -398,7 +391,6 @@
 
 .save__floppy-icon {
   inline-size: 28px;
-  fill: var(--color-floppy);
 }
 
 @media (width > 375px) { 
