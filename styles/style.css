@@ -322,8 +322,7 @@
 }
 
 .floppy-icon {
-    fill: var(--color-floppy);
-  /* fill: var(--color-floppy); */
+  fill: var(--color-floppy);
 }
 
 .button:focus {
@@ -346,14 +345,6 @@
 
 .button:hover::before {
   inline-size: 100%;
-}
-
-.button:hover .button__text {
-  mix-blend-mode: difference;
-}
-
-.button:hover .save__floppy-icon {
-  mix-blend-mode: difference;
 }
 
 /* ----------------------- Save button ------------------------ */
@@ -390,6 +381,8 @@
 }
 
 .save__floppy-icon {
+  fill: var(--color-hover);
+  mix-blend-mode: difference;
   inline-size: 28px;
 }
 
@@ -406,6 +399,7 @@ dialog[open]{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   gap: 30px;
   padding: 30px;
   background-color: var(--background-color);
@@ -442,9 +436,12 @@ dialog[open]{
 }
 
 .dialog__button__text {
-  color: var(--accent-color);
   font-family: var(--accent-font, fantasy);
   text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
 }
 
 .dialog__floppy-icon {
