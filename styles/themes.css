@@ -56,4 +56,24 @@
         --color-hover-heart: #000000;
     }
 }
+
+@media (prefers-color-scheme: dark) { 
+    :root { 
+        --background-color: #000000;
+        --background-image:
+            repeating-linear-gradient(to right, #000000 0px 2px, transparent 2px 4px),
+            repeating-linear-gradient(to bottom, #000000 0px 2px, transparent 2px 4px),
+            linear-gradient(to bottom, #007f0c 0.01%, #004306);
+        --text-color: #00CC14;
+        --accent-color: #00CC14;
+        --color-lable-text: #00CC14;
+        --color-lable-shadow: #000000;
+        --color-floppy: #00CC14;
+        --color-hover: #00CC14;
+        --color-heart: #FF0000;
+        --color-hover-heart: #00CC14;
+        --main-font-weight-title: 785;
+        --main-font-weight: 465;
+    }
+}
     
