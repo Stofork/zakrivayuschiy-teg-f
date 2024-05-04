@@ -238,7 +238,6 @@
   min-inline-size: 130px;
   font-size: 0.91rem;
   line-height: 0.9;
-  transition:  0.5s linear;
 }
 
 .like-icon .core {
@@ -358,12 +357,6 @@
   margin-top: 55px;
 }
 
-@media (width > 375px) {
-  .save {
-    margin-top: 55px;
-  }
-}
-
 .save__button {
   display: flex; 
   flex-direction: column;
@@ -377,7 +370,8 @@
 @media (width > 375px) {
   .save__button { 
     flex-direction: row;
-    padding: 15px;
+    padding: 12px 14px;
+    gap: 5px;
   }
 }
 
@@ -391,6 +385,13 @@
   mix-blend-mode: difference;
   width: 28px;
   height: 28px;
+}
+
+@media (width > 375px) {
+  .save__floppy-icon { 
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* ----------------------- Dialog ------------------------ */

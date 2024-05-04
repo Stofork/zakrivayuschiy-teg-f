@@ -37,6 +37,8 @@
     --color-hover: #FFFFFF;
     --color-heart: #FF0000;
     --color-hover-heart: #000000;
+    --main-font-weight: 400;
+    --main-font-weight-title: 700;
 }
 
 @media (prefers-color-scheme: light) { 
@@ -54,6 +56,8 @@
         --color-hover: #FFFFFF;
         --color-heart: #FF0000;
         --color-hover-heart: #000000;
+        --main-font-weight: 400;
+        --main-font-weight-title: 700;
     }
 }
 
